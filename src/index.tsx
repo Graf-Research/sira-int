@@ -10,6 +10,8 @@ const project_pages: string[] = [
   "page Tambah Provinsi\n  [data]\n    row provinsi\n\n  [view]\n    form Formulir Tambah Provinsi\n      - Nama: provinsi.nama text\n\n    button Simpan {\n      confirm Simpan?\n      query 'tambah provinsi' ($1 = provinsi.nama)\n      alert Berhasil menambah provinsi\n      goto Semua Provinsi\n    }\n",
 ];
 
+export { WebDesignerInterpreter, StatementExec };
+
 // Delete me
 export const Thing = () => {
   StatementExec.config = {
