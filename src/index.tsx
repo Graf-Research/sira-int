@@ -4,13 +4,14 @@ import { WebDesignerInterpreter } from './components/web-designer-interpreter/We
 import { SiraParser } from 'sira-lang/lib/main';
 import { SiraPage } from 'sira-lang/lib/sira.interface';
 import { StatementExec } from './components/web-designer-interpreter/statement-exec';
+import { WDIPageViewPreview } from './components/web-designer-interpreter/wdi-page-view/WDIPageView';
 
 const project_pages: string[] = [
   "page Semua Provinsi\n  [data]\n    table daftar_provinsi = query 'daftar provinsi'\n\n  [view]\n    table Daftar Provinsi (source = daftar_provinsi)\n      - ID: daftar_provinsi.id numeric\n      - Nama: daftar_provinsi.nama text\n",
   "page Tambah Provinsi\n  [data]\n    row provinsi\n\n  [view]\n    form Formulir Tambah Provinsi\n      - Nama: provinsi.nama text\n\n    button Simpan {\n      confirm Simpan?\n      query 'tambah provinsi' ($1 = provinsi.nama)\n      alert Berhasil menambah provinsi\n      goto Semua Provinsi\n    }\n",
 ];
 
-export { WebDesignerInterpreter, StatementExec };
+export { WebDesignerInterpreter, WDIPageViewPreview, StatementExec };
 
 // Delete me
 export const Thing = () => {
