@@ -8,7 +8,7 @@ import { StatementExec } from "./statement-exec";
 import { SiraState, SiraStateDataCell } from "./statement.interface";
 import { getAllUrlParams, getUrlParam } from "../url.util";
 
-interface WebDesignerInterpreterProps {
+export interface WebDesignerInterpreterProps {
   pages: SiraPage[]
 }
 
