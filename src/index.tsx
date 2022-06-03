@@ -1,16 +1,17 @@
 import * as React from 'react';
 
-import { WebDesignerInterpreter } from './components/web-designer-interpreter/WebDesignerInterpreter'
+import { WebDesignerInterpreter as _WebDesignerInterpreter } from './components/web-designer-interpreter/WebDesignerInterpreter'
 import { SiraParser } from 'sira-lang/lib/main';
 import { SiraPage } from 'sira-lang/lib/sira.interface';
-import { StatementExec } from './components/web-designer-interpreter/statement-exec';
+import { StatementExec as _StatementExec } from './components/web-designer-interpreter/statement-exec';
 
 const project_pages: string[] = [
   "page Semua Provinsi\n  [data]\n    table daftar_provinsi = query 'daftar provinsi'\n\n  [view]\n    table Daftar Provinsi (source = daftar_provinsi)\n      - ID: daftar_provinsi.id numeric\n      - Nama: daftar_provinsi.nama text\n",
   "page Tambah Provinsi\n  [data]\n    row provinsi\n\n  [view]\n    form Formulir Tambah Provinsi\n      - Nama: provinsi.nama text\n\n    button Simpan {\n      confirm Simpan?\n      query 'tambah provinsi' ($1 = provinsi.nama)\n      alert Berhasil menambah provinsi\n      goto Semua Provinsi\n    }\n",
 ];
 
-export { WebDesignerInterpreter, StatementExec };
+export const WebDesignerInterpreter = _WebDesignerInterpreter;
+export const StatementExec = _StatementExec;
 
 // Delete me
 export const Thing = () => {
