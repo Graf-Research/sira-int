@@ -10,6 +10,7 @@ import { getAllUrlParams, getUrlParam } from "../url.util";
 
 export interface WebDesignerInterpreterProps {
   pages: SiraPage[]
+  onLogout?(): void
 }
 
 export function WebDesignerInterpreter(props: WebDesignerInterpreterProps) {
@@ -79,7 +80,8 @@ export function WebDesignerInterpreter(props: WebDesignerInterpreterProps) {
       <SidebarSection>
         <WDISidebar 
           onPageChange={onChangePage}
-          pages={props.pages} />
+          pages={props.pages}
+          onLogout={props.onLogout} />
       </SidebarSection>
       <MainSection>
         <div style={{ fontSize: 24, marginBottom: 20, fontWeight: 700 }}>
