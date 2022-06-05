@@ -6,6 +6,7 @@ import { getUrlParam } from "../../url.util";
 interface WDISidebarProps {
   pages: SiraPage[]
   onPageChange(page: string): void
+  onLogout?(): void
 }
 
 function needParams(sp: SiraPage): boolean {
@@ -37,6 +38,12 @@ export function WDISidebar(props: WDISidebarProps) {
             );
           })
         }
+        <br/>
+        <ContainerMenu>
+          <Menu onClick={props.onLogout}>
+            Logout
+          </Menu>
+        </ContainerMenu>
       </ContainerSidebar>
     </WDISidebarContainer>
   );
