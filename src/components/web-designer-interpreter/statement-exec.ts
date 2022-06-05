@@ -5,6 +5,7 @@ import { HTTPCallQuery, HTTPResult, searchGlobalDataCell, searchGlobalDataRow, s
 export interface StatementExecConfig {
   query_base_url: string
   headers: {[key: string]: string}
+  onUnauthorizedHTTPResponse?(): void
 }
 
 export interface IStatementExec {
@@ -227,6 +228,9 @@ export class StatementExec {
     try {
       return (await axios.post(`${data.endpoint}?label=${data.query}`, {params: data.data})).data;
     } catch (err) {
+      if (err.response.status === 401 && StatementExec.config.onUnauthorizedHTTPResponse) {
+        StatementExec.config.onUnauthorizedHTTPResponse();
+      }
       throw new Error(err.response.data.toString());
     }
   }
