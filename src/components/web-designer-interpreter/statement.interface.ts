@@ -72,7 +72,7 @@ export function searchGlobalDataCell(state: SiraState, variable: string): SiraSt
     return result;
   }
   if (state.parent) {
-    return searchLocalDataCell(state.parent, variable);
+    return searchGlobalDataCell(state.parent, variable);
   }
   return undefined;
 }

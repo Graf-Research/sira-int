@@ -12,6 +12,7 @@ interface WDIButtonViewProps {
 
 export function WDIButtonView(props: WDIButtonViewProps) {
   async function onClick() {
+    console.log(props.state);
     const statement_exec = new StatementExec({
       parent_state: props.state,
       statements: props.data.data.statements,

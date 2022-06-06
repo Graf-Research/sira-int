@@ -210,6 +210,7 @@ export class StatementExec {
   private getDataFromParam(param: Param): any {
     switch (param.type) {
       case 'param':
+        console.log(this.state, param);
         const cell_data = searchGlobalDataCell(this.state, param.value);
         if (!cell_data) {
           throw new Error(`Param '${param.value}' undefined`);
