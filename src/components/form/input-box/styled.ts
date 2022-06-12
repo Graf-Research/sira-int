@@ -17,6 +17,7 @@ export const Box = styled.div`
   font-weight: 400;
   align-items: center;
   box-sizing: border-box;
+  background-color: #121212;
 `;
 
 export const CenterItem = styled.div`
@@ -25,15 +26,11 @@ export const CenterItem = styled.div`
   flex-direction: column;
 `;
 
-export const InputBoxLabelDark = styled.div`
+export const InputBoxLabel = styled.div`
   padding-left: 12px;
   padding-bottom: 4px;
   font-size: 13px;
   color: #BBB;
-`;
-
-export const InputBoxLabelLight = styled(InputBoxLabelDark)`
-  color: #464A53;
 `;
 
 export const InputBoxErrorText = styled.div`

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const ButtonContainer = styled.div`
-  background-color: #1B1C25;
+  background-color: #1DB954;
   color: #FFF;
-  border-radius: 3px;
-  padding: 7px 14px;
+  border-radius: 999px;
+  padding: 10px 19px;
   cursor: pointer;
   font-family: 'Plus Jakarta Sans', sans-serif;
   text-align: center;
@@ -15,7 +15,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const ButtonOutlineContainer = styled(ButtonContainer)`
-  color: #1B1C25;
+  color: #FFF;
   background-color: transparent;
-  border: solid 1px #1B1C25;
+  border: solid 1px #FFF;
 `;

@@ -4,9 +4,10 @@ import { WDIButtonView, WDIButtonViewPreview } from "./item-view-interpreter/wdi
 import { WDIFormView, WDIFormViewPreview } from "./item-view-interpreter/wdi-form-view/WDIFormView";
 import { WDIMultiformView, WDIMultiformViewPreview } from "./item-view-interpreter/wdi-multiform-view/WDIMultiformView";
 import { WDITableView, WDITableViewPreview } from "./item-view-interpreter/wdi-table-view/WDITableView";
-import { WDIPageViewContainer, WDIPageViewPreviewContainer } from "./styled";
+import { WDIPageViewContainer, WDIPageViewPreviewContainer, WDIPageViewTitle } from "./styled";
 
 interface WDIPageViewProps {
+  title: string
   views: ViewComponent[]
   state: any
   setState(state: any): void
@@ -15,6 +16,9 @@ interface WDIPageViewProps {
 export function WDIPageView(props: WDIPageViewProps) {
   return (
     <WDIPageViewContainer>
+      <WDIPageViewTitle>
+        { props.title }
+      </WDIPageViewTitle>
       { props.views.map((iv: ViewComponent, i: number) => {
         switch (iv.type) {
           case 'button': return (<WDIButtonView 
@@ -52,9 +56,9 @@ interface WDIPageViewPreviewProps {
 export function WDIPageViewPreview(props: WDIPageViewPreviewProps) {
   return (
     <WDIPageViewPreviewContainer>
-      <h2>
+      <WDIPageViewTitle>
         { props.title }
-      </h2>
+      </WDIPageViewTitle>
       {
         (props.views ?? []).map((iv: ViewComponent, i: number) => {
           switch (iv.type) {

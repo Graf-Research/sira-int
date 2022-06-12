@@ -1,6 +1,6 @@
 import React from "react";
 import { ExecutionTime } from "../table.util";
-import { MainTableDark, MainTableLight, TableDataContainer, THead, TBody, TDDark, TDLight, THDark, THLight, TRDark, TRLight } from "./styled";
+import { MainTable, TableDataContainer, THead, TBody, TD, TH, TR } from "./styled";
 
 type SNBType = string | number | boolean | JSX.Element;
 
@@ -13,11 +13,6 @@ interface TableDataProps {
 
 export function TableData(props: TableDataProps) {
   const is_dark_mode = false;
-
-  const MainTable = is_dark_mode ? MainTableDark : MainTableLight;
-  const TD = is_dark_mode ? TDDark : TDLight;
-  const TH = is_dark_mode ? THDark : THLight;
-  const TR = is_dark_mode ? TRDark : TRLight;
 
   return (
     <div>

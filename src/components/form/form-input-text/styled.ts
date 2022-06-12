@@ -3,18 +3,14 @@ import { theme } from "../../theme";
 
 export const FormInputTextContainer = styled.div``;
 
-export const CustomInputDark = styled.input`
+export const CustomInput = styled.input`
   border: none;
   outline: none;
-  padding: 6.5px 12px;
+  padding: 9px 13px;
   box-sizing: border-box;
   font-size: 13px;
+  font-family: 'Manrope', sans-serif;
   width: calc(100%);
   color: #EEE;
-  background-color: #222;
-`;
-
-export const CustomInputLight = styled(CustomInputDark)`
-  color: #222;
-  background-color: #FFF;
+  background-color: #121212;
 `;

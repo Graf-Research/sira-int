@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { CSSProperties, useEffect } from "react";
 import moment from "moment";
 import { ItemTable, ItemTableButton, ItemTableCell, ViewComponentTable } from "sira-lang/lib/sira.interface";
 import { Button } from "../../../../button/Button";
@@ -7,11 +7,13 @@ import { StatementExec } from "../../../statement-exec";
 import { searchGlobalDataRow, searchGlobalDataTable, SiraState, SiraStateDataRow, SiraStateDataTable } from "../../../statement.interface";
 import { WDIPreviewBody, WDIPreviewColumn, WDIPreviewHeader, WDIPreviewRow, WDIPreviewTable, WDITableViewContainer, WDITableViewPreviewContainer } from "./styled";
 import { SNBType } from "../../../../table.util";
+import { SectionTitle } from "../../styled";
 
 interface WDITableButtonProps {
   data: ItemTableButton
   state: SiraState
   setState(state: SiraState): void
+  outline?: boolean
 }
 
 function WDITableButton(props: WDITableButtonProps) {
@@ -26,7 +28,15 @@ function WDITableButton(props: WDITableButtonProps) {
 
   return (
     <div style={{ display: 'flex' }}>
-      <Button onClick={onClick} style={{ padding: '6px 16px' }}>
+      <Button 
+        outline={props.outline}
+        onClick={onClick}
+        style={{
+          display: 'block',
+          textAlign: 'center',
+          fontSize: 14,
+          padding: '5px 16px'
+        }}>
         { props.data.data.label }
       </Button>
     </div>
@@ -64,7 +74,8 @@ export function WDITableView(props: WDITableViewProps) {
             <WDITableButton
               state={inner_state}
               setState={props.setState}
-              data={it} />
+              data={it}
+              outline />
           );
         default:
           const item_table_cell: ItemTableCell = it;
@@ -100,9 +111,9 @@ export function WDITableView(props: WDITableViewProps) {
   
   return (
     <WDITableViewContainer>
-      <div style={{ marginBottom: 8, fontSize: 20, fontWeight: 700, color: '#444' }}>
+      <SectionTitle>
         { props.data.data.name }
-      </div>
+      </SectionTitle>
       <TableData 
         header={table_header}
         data={getTableData()} />

@@ -10,7 +10,7 @@ export const ItemFormContainer = styled.div`
   padding: 18px;
   padding-bottom: 12px;
   margin-bottom: 12px;
-  background-color: #F5F5F5;
+  background-color: #212121;
   border-radius: 13px;
 `;
 

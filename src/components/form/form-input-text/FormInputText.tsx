@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { CSSProperties, InputHTMLAttributes, useState } from "react";
 import InputBox, { InputBoxState } from "../input-box/InputBox";
-import { CustomInputDark, CustomInputLight } from "./styled";
+import { CustomInput } from "./styled";
 
 interface FormInputTextProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
@@ -18,8 +18,6 @@ interface FormInputTextProps extends InputHTMLAttributes<HTMLInputElement> {
 export default function FormInputText(props: FormInputTextProps) {
   const is_dark_mode = false;
   const [focus, setFocus] = useState<boolean>(false);
-  
-  const CustomInput = is_dark_mode ? CustomInputDark : CustomInputLight;
 
   return (
     <InputBox 

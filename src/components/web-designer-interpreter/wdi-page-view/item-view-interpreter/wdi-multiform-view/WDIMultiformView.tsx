@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { VariableAccess, ViewComponentMultiform } from "sira-lang/lib/sira.interface";
 import { Button } from "../../../../button/Button";
 import { searchGlobalDataTable, searchLocalDataRow, searchState, SiraState, SiraStateDataTable } from "../../../statement.interface";
+import { SectionTitle } from "../../styled";
 import { GeneralForm } from "../general-form/GeneralForm";
 import { WDIFormViewPreview } from "../wdi-form-view/WDIFormView";
 import { ItemFormContainer, ItemMultiformPreview, ListFormContainer, RemoveFormContainer, WDIMultiformViewContainer, WDIMultiformViewPreviewContainer } from "./styled";
@@ -76,9 +77,9 @@ export function WDIMultiformView(props: WDIMultiformViewProps) {
 
   return (
     <WDIMultiformViewContainer>
-      <div style={{ marginBottom: 8, fontSize: 20, fontWeight: 700, color: '#444' }}>
+      <SectionTitle>
         { props.data.data.name }
-      </div>
+      </SectionTitle>
       <ListFormContainer>
         <div>
           {
@@ -97,7 +98,15 @@ export function WDIMultiformView(props: WDIMultiformViewProps) {
               return (
                 <ItemFormContainer key={i}>
                   <RemoveFormContainer>
-                    <Button onClick={() => onRemoveItem(i)}>
+                    <Button 
+                      style={{
+                        display: 'block',
+                        textAlign: 'center',
+                        fontSize: 14,
+                        padding: '5px 16px'
+                      }}
+                      onClick={() => onRemoveItem(i)}
+                      outline>
                       Hapus
                     </Button>
                   </RemoveFormContainer>

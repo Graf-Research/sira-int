@@ -13,12 +13,9 @@ export const ContainerSidebar = styled.div`
   top: 0;
   left: 0;
   z-index: 2;
-  background-color: #FFF;
+  background-color: #212121;
   height: 100%;
   width: 100%;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, .05);
-  padding-top: 20px;
-  border-right: solid 1px #F0F0F0;
 `;
 
 export const ContainerMenu = styled.div`
@@ -26,17 +23,31 @@ export const ContainerMenu = styled.div`
 `;
 
 export const Menu = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
   padding: 12px 22px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.72);
   &:hover {
-    background-color: #00000007;
+    color: white;
   }
 `;
 
 export const ActiveMenu = styled(Menu)`
-  background-color: #34DBA122;
+  color: rgba(255, 255, 255, 1);
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.06) 100%);
   &:hover {
-    background-color: #34DBA122;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.0) 0%, rgba(255, 255, 255, 0.06) 100%);
   }
+`;
+
+export const LogoContainer = styled.div`
+  margin-left: 23px;
+  margin-bottom: 20px;
+  margin-top: 26px;
+  color: #FFF;
+  font-size: 18px;
 `;

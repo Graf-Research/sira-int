@@ -3,6 +3,7 @@ import { ItemForm, VariableAccess, ViewComponentForm } from "sira-lang/lib/sira.
 import { Button } from "../../../../button/Button";
 import { IconArrowDown } from "../../../../form/form-input-dropdown/FormInputDropdown";
 import { searchGlobalDataRow, searchState, SiraState, SiraStateDataRow } from "../../../statement.interface";
+import { SectionTitle } from "../../styled";
 import { GeneralForm } from "../general-form/GeneralForm";
 import { ItemFormPreviewContainer, ItemFormPreviewDropdown, ItemFormPreviewInput, ItemFormPreviewLabel, ItemFormPreviewTextarea, WDIFormViewContainer, WDIFormViewPreviewContainer } from "./styled";
 
@@ -40,9 +41,9 @@ export function WDIFormView(props: WDIFormViewProps) {
   
   return (
     <WDIFormViewContainer>
-      <div style={{ marginBottom: 8, fontSize: 20, fontWeight: 700, color: '#444' }}>
+      <SectionTitle>
         { props.data.data.name }
-      </div>
+      </SectionTitle>
       <div>
         <GeneralForm
           state={props.state}

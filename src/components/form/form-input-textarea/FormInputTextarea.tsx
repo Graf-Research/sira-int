@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { CSSProperties, InputHTMLAttributes, TextareaHTMLAttributes, useState } from "react";
-import { CustomInputDark, CustomInputLight } from "./styled";
+import { CustomInput } from "./styled";
 import InputBox, { InputBoxState } from "../input-box/InputBox";
 
 interface FormInputTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
@@ -19,7 +19,6 @@ interface FormInputTextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElem
 export default function FormInputTextarea(props: FormInputTextareaProps) {
   const is_dark_mode = false;
   const [focus, setFocus] = useState<boolean>(false);
-  const CustomInput = is_dark_mode ? CustomInputDark : CustomInputLight;
 
   return (
     <InputBox 

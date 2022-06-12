@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { CSSProperties } from "styled-components";
 import { theme } from "../../theme";
-import { Box, CenterItem, InputBoxContainer, InputBoxErrorText, InputBoxLabelDark, InputBoxLabelLight } from "./styled";
+import { Box, CenterItem, InputBoxContainer, InputBoxErrorText, InputBoxLabel } from "./styled";
 
 export type InputBoxState = 'normal' | 'done' | 'error' | 'border' | 'calendar-off' | 'calendar-on' | 'search' | 'transparent';
 
@@ -26,22 +26,18 @@ function getInputBoxStateStyle(is_dark_mode: boolean, state: InputBoxState): CSS
     case 'normal':
       return {
         border: `solid 1px ${theme.primary_color}`,
-        backgroundColor: is_dark_mode ? '#222' : '#FFF'
       }
     case 'error':
       return {
         border: `solid 1px ${theme.danger_color}`,
-        backgroundColor: is_dark_mode ? '#222' : '#FFF'
       }
     case 'border':
       return {
-        border: `solid 1px ${is_dark_mode ? '#888' : '#CCC'}`,
-        backgroundColor: is_dark_mode ? '#222' : '#FFF',
+        border: `solid 1px #444`,
       }
     case 'transparent':
       return {
-        border: `solid 1px ${is_dark_mode ? '#222' : '#FFF'}`,
-        backgroundColor: is_dark_mode ? '#222' : '#FFF'
+        border: `solid 1px #444`,
       }
     case 'calendar-off':
       return {
@@ -70,8 +66,6 @@ function getInputBoxStateStyle(is_dark_mode: boolean, state: InputBoxState): CSS
 export default function InputBox(props: InputBoxProps) {
   const is_dark_mode = false;
   const state_style = getInputBoxStateStyle(is_dark_mode, props.state ?? 'normal');
-
-  const InputBoxLabel = is_dark_mode ? InputBoxLabelDark : InputBoxLabelLight;
 
   return (
     <InputBoxContainer 

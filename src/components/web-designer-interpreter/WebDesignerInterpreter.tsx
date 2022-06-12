@@ -84,10 +84,8 @@ export function WebDesignerInterpreter(props: WebDesignerInterpreterProps) {
           onLogout={props.onLogout} />
       </SidebarSection>
       <MainSection>
-        <div style={{ fontSize: 24, marginBottom: 20, fontWeight: 700 }}>
-          { active_page?.title }
-        </div>
         <WDIPageView 
+          title={active_page?.title}
           state={state}
           setState={__state => setState({ ...__state })}
           views={(active_page?.sections.find((ip: PageSection) => ip.type === 'view')?.data ?? []) as ViewComponent[]} />

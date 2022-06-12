@@ -3,7 +3,7 @@ import { CSSProperties, InputHTMLAttributes, useState } from "react";
 import Dropdown, { CustomOption, Option } from "./dropdown/Dropdown";
 import InputBox, { InputBoxState } from "../input-box/InputBox";
 import { AbsolutePositionDropdown, FormInputDropdownContainer } from "./styled";
-import { CustomInputDark, CustomInputLight } from "../form-input-text/styled";
+import { CustomInput } from "../form-input-text/styled";
 
 interface FormInputDropdownProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
@@ -32,7 +32,6 @@ export function IconArrowDown(props: InputHTMLAttributes<HTMLInputElement>) {
 export default function FormInputDropdown(props: FormInputDropdownProps) {
   const is_dark_mode = false;
   const [show_dropdown, setShowDropdown] = useState<boolean>(false);
-  const CustomInput = is_dark_mode ? CustomInputDark : CustomInputLight;
 
   function clickAction() {
     if (props.readOnly) {

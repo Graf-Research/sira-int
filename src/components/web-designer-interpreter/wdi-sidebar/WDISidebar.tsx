@@ -1,7 +1,8 @@
 import React from "react";
-import { ActiveMenu, ContainerMenu, ContainerSidebar, Menu, WDISidebarContainer } from "./styled";
+import { ActiveMenu, ContainerMenu, ContainerSidebar, LogoContainer, Menu, WDISidebarContainer } from "./styled";
 import { PageSection, SiraPage } from 'sira-lang/lib/sira.interface';
 import { getUrlParam } from "../../url.util";
+import { HomeIconBase64 } from "../../icon";
 
 interface WDISidebarProps {
   pages: SiraPage[]
@@ -21,9 +22,9 @@ export function WDISidebar(props: WDISidebarProps) {
   return (
     <WDISidebarContainer>
       <ContainerSidebar>
-        <div style={{ marginLeft: 19, marginBottom: 10 }}>
-          Logo
-        </div>
+        <LogoContainer>
+          Play on Dearblues
+        </LogoContainer>
         {
           props.pages.filter((sp: SiraPage) => !needParams(sp)).map((sp: SiraPage, i: number) => {
             const is_active = getUrlParam('page') === sp.title;
@@ -32,6 +33,7 @@ export function WDISidebar(props: WDISidebarProps) {
             return (
               <ContainerMenu key={i}>
                 <MenuStyle onClick={() => props.onPageChange(sp.title)}>
+                  <img src={HomeIconBase64} />
                   { sp.title }
                 </MenuStyle>
               </ContainerMenu>
